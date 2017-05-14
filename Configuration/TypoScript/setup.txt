@@ -16,7 +16,7 @@ config.typolinkEnableLinksAcrossDomains = 1
 
 config.language=de
 config.locale_all=de_DE
-
+config.cache_period = 2592000
 
 ################################ lib
 
@@ -93,6 +93,7 @@ lib.fluidContent.settings.media.popup {
 	width = 1024m
 	height = 1024m
 } 
+tt_content.textmedia.settings.media.popup < lib.fluidContent.settings.media.popup
 
 # class="bodytext" bei RTE abstellen
 lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.addAttributes.P.class >
@@ -188,6 +189,6 @@ page.shortcutIcon = favicon.ico
 #########
 page {
     includeJSFooterlibs {
-        jquery = EXT:villakunterbunt/Resources/Public/Javascript/jquery-1.12.2.min.js
+        jquery = EXT:villakunterbunt/Resources/Public/Javascript/jquery-1.12.4.min.js
     }
 }
