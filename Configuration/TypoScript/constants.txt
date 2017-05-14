@@ -1,0 +1,8 @@
+config.tx_piwik {
+        piwik_host = /typo3conf/piwik/piwik/
+}
+styles.content.imgtext.linkWrap {
+  lightboxEnabled = 1
+  lightboxRelAttribute = lightbox{TSFE:id}
+  lightboxCssClass = lightbox
+}

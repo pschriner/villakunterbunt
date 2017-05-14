@@ -1,0 +1,429 @@
+/* @import url(http://fonts.googleapis.com/css?family=Shadows+Into+Light); */
+
+.screen-reader {
+  position:absolute;
+  left:-999px;
+  top:-999px;
+}
+
+body {
+  color:black;
+  font-family: Arial;
+  font-size:16px;
+  background-image:url(../Images/villa_bg2016.jpg), url(../Images/hands2.jpg);
+  background-repeat:no-repeat, repeat;
+  background-position:top center;
+  background-size:contain, auto auto;
+}
+
+html.lt-ie8 menu ul li {
+  display:block;
+  float:left;
+}
+html.lt-ie9 body {
+  background-image:url(../Images/villa_bg2016.jpg);
+  background-repeat:no-repeat;
+  background-position:top center;
+  background-color:#efefef;
+  background-size: 100%;
+}
+html.lt-ie9 body.background-removed {
+  background-image: url(../Images/hands2.jpg);
+  background-repeat:repeat;
+}
+html.lt-ie9 body image.backgroundimage {
+  position:absolute;
+  width:100%;
+  z-index:-10;
+  top:0;
+  left:0;
+}
+a {
+  color:black;
+}
+header h1 {
+  font-size:2em;
+  color:white;
+  background-color:transparent !important;
+  text-align:right;
+  text-shadow: 2px 2px black;
+  padding:0 0.5em;
+}
+
+header a,
+footer a {
+  text-decoration:none;
+}
+header li+li a:hover,
+footer a:hover {
+  text-decoration:underline;
+}
+
+header,
+div#content,
+footer {
+  max-width:800px;
+  margin:0 auto;
+  clear:both;
+}
+
+footer {
+  text-align:center;
+}
+footer li, footer span {
+  background-color:white;
+}
+
+div#content header h1,
+div#content h2,
+div#content h3 {
+  font-size:1.1em;
+  font-weight:bold;
+  padding-top:0.5em;
+  color:inherit;
+  text-align:left;
+  text-shadow:none;
+}
+div#content header h1 {
+  font-size:1.4em;
+}
+div#content h2 {
+  font-size:1.2em;
+}
+div#content table {
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+div#content table.left {
+  margin-right:auto;
+  margin-left:0px;
+}
+
+div#content table.center {
+  margin-left:auto;
+  margin-right:auto;
+}
+
+div#content table.right {
+  margin-right:0px;
+  margin-left:auto;
+}
+
+.csc-orientation-centertop img {
+  margin-right:auto;
+  margin-left:auto;  
+}
+div#content_main .csc-textpic-caption {
+  font-size:0.9em;
+  line-height: 1.3em;
+}
+
+div#content_main .ce-right.ce-intext .ce-gallery {
+	float:right;
+}
+div#content_main .ce-left.ce-intext .ce-gallery {
+	float:left;
+}
+div#content_main .ce-left.ce-intext .ce-gallery img,
+div#content_main .ce-left.ce-intext .ce-gallery figure {
+	max-width:300px;
+	margin:0 1em 1em 0;
+}
+div#content_main .ce-right.ce-intext .ce-gallery img,
+div#content_main .ce-right.ce-intext .ce-gallery figure {
+	max-width:300px;
+	margin:0 0 1em 1em;
+}
+div#content_main .ce-intext .ce-gallery figure figcaption {
+	font-size:0.9em;
+	line-height:1.3em;
+}
+div#content_main .ce-textpic.ce-center .ce-media {
+	margin:0 auto;
+	max-width:600px;
+}
+div#content_main .inner_cbQuickGoogleMap {
+	margin:1em auto;
+}
+menu {
+  padding: 0;
+}
+header {
+  margin-bottom:0;
+  
+}
+header menu {
+  margin-bottom:0;
+}
+
+footer {
+  margin-top:2em;
+  color:#0f0f0f;
+  font-size:0.9em;
+  padding:0 2em 2em 2em;
+  max-width:760px;
+  text-align:center;
+}
+footer ul {
+  display:inline;
+}
+
+header h1,
+menu ul,
+html.lt-ie8 menu ul li {
+  background-color:#EFB700;
+}
+header h1 div {
+  display:inline;
+}
+menu ul {
+  font-family: "Shadows Into Light", cursive;
+  font-size:1.3em;
+}
+menu ul li.sub,
+menu ul#mainMenu2 {
+  background-color:#FFB720;
+}
+
+menu ul li.active a{
+  text-decoration:underline;
+}
+
+footer ul,
+menu ul {
+  list-style-type: none;
+  list-style-position: inside;
+  padding:0;
+  margin:0;
+}
+
+footer ul li,
+menu ul li {
+  display:inline-block;
+  padding:0.3em 0.6em;
+  margin:0;
+}
+
+menu ul li a {
+  color:black;
+}
+
+footer ul li a {
+  color:black;
+}
+div#content {
+  background-color:transparent;
+  margin-bottom:0.5em;
+  width:100%;
+}
+div#content_main ul {
+  margin:1.5em 0;
+  padding-left:2.5em;
+}
+div#content_main ul ul {
+  margin:0.25em 0;
+}
+div#content_main {
+  min-height:500px;
+  margin-bottom:20px;
+  padding:0.75em 1.5em;
+  line-height:1.5em;
+  border-color:#EFB700;
+  border-width:2px;
+  border-style:solid;
+  background-color:white;
+}
+div#content_right {
+  float:right;
+  margin-bottom:20px;
+  padding:2px;
+  display:none;
+}
+div#content_right section {
+  width:220px;
+}
+
+div.clear {
+  clear:both;
+}
+div.indent {
+  padding-left:2.5em;
+}
+
+
+header span { font-size:1.3em; font-family:"Comic Sans MS"; text-shadow:1px 1px white; }
+.blau1 { color:#2251BD; text-shadow: 1px 1px 2px #0972BC;}
+.blau2 { color:#28A2E5; text-shadow: 1px 1px 2px #0827A3;}
+.gruen1 { color:#29AE41; text-shadow: 1px 1px 2px #08A01C;}
+.gelb1 { color:#DBA90A; text-shadow: 1px 1px 2px #DBA30A;}
+.rot1 { color:#CE0B13; text-shadow: 1px 1px 2px #B70911;}
+
+div#content img {
+  width:auto;
+  height:auto;
+  max-width:100%;
+}
+.csc-imagewrap figure {
+  width:100%;
+}
+
+@media all and (max-width: 1210px) {
+  body {
+    background-size:auto 200px;
+  }
+}
+@media all and (max-width: 1000px) {
+  header h1 { 
+    font-size:1.7em;
+  }
+}
+@media all and (max-width: 750px) {
+  header h1 { 
+    font-size:1.6em;
+  }
+  header h1 div {
+    display:block;
+  }
+  menu ul li {
+    font-size:1em;
+  }
+  div#content_main {
+    padding: 0.25em 0.75em;
+  }
+  footer ul li,
+  menu ul li {
+    padding:0.2em 0.3em;
+  }
+}
+@media all and (max-width: 12cm), all and (max-device-width:800px) {
+  menu ul li.active a{
+    font-weight:bold;
+  }
+}
+@media all and (max-width: 600px) {
+  menu ul li {
+    font-size:0.9em;
+  }
+  div#content_right {
+    float:none;
+  }
+}
+@media all and (max-width: 480px) {
+  body {
+    font-size:0.9em;
+  }
+  div#content img {
+    width:auto;
+    height:auto;
+  }
+}
+@media all and (max-width:360px) {
+  header h1 {
+    font-size:1.5em;
+    text-shadow:none !important;
+  }
+  header span {
+    font-size:1.1em;
+    text-shadow:none !important;
+  }
+}
+@media all and (min-width:1000px) {
+  header h1{
+    width:1000px;
+    position:relative;
+    left:-110px;
+    text-align:center;
+  }
+  header h1 span {
+    margin-left:0.4em;
+    position:relative;
+    top:0.15em;
+  }
+  header h1 span span {
+    margin-left:auto;
+    position:static;
+    top:auto;
+  }
+
+}
+@media all and (min-width:1100px) {
+  div#content_right {
+    max-width:160px;
+  }
+}
+@media all and (min-width:1300px) {
+  div#content_right {
+    max-width: 1px;
+  }
+  div#content_right div.csc-default {
+    margin-left:13px;
+  }
+}
+div#content_main header h1 {
+  position:static;
+  width:auto;
+  left:auto;
+}
+
+th, td {
+  border:1px solid black;
+  padding:5px;
+}
+.cbQuickGoogleMap a.ext {
+  text-decoration:none;
+  font-weight:bold;
+}
+
+/* kindertagesstaette */
+body.kindertagesstaette header h1,
+body.kindertagesstaette menu ul,
+html.lt-ie8 body.kindertagesstaette menu ul li {
+  background-color:#097724;
+}
+body.kindertagesstaette menu ul li.sub,
+body.kindertagesstaette menu ul#mainMenu2 {
+  background-color:#129131;
+}
+
+body.kindertagesstaette div#content_main {
+  border-color: #129131;
+}
+body.kindertagesstaette menu ul li a {
+  color:white;
+}
+
+/* familienzentrum */
+body.familienzentrum header h1,
+body.familienzentrum menu ul, 
+html.lt-ie8 body.familienzentrum menu ul li{
+  background-color:#AE5A65;
+}
+body.familienzentrum menu ul li.sub,
+body.familienzentrum menu ul#mainMenu2 {
+  background-color:#8C1324;
+}
+
+body.familienzentrum div#content_main {
+  border-color: #8C1324;
+}
+body.familienzentrum menu ul li a {
+  color:white;
+}
+
+/* schule */
+body.schule header h1,
+body.schule menu ul, 
+html.lt-ie8 body.schule menu ul li{
+  background-color:#0972bc;
+}
+body.schule menu ul li.sub,
+body.schule menu ul#mainMenu2 {
+  background-color:#2251BD;
+}
+
+body.schule div#content_main {
+  border-color: #2251BD;
+}
+body.schule menu ul li a {
+  color:white;
+}

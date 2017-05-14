@@ -1,0 +1,66 @@
+{
+  "name": "pschriner/villakunterbunt",
+  "type": "typo3-cms-extension",
+  "description": "Site extension für die Villa Kunterbunt Niederkassel",
+  "keywords": [
+    "TYPO3",
+    "extension",
+    "villakunterbunt"
+  ],
+  "homepage": "https://github.com/pschriner/villakunterbunt",
+  "authors": [
+    {
+        "name": "Patrick Schriner",
+        "role": "Developer",
+        "homepage": "https://github.com/pschriner/villakunterbunt"
+    }
+  ],
+  "license": [
+    "GPL-2.0+"
+  ],
+  "require": {
+    "typo3/cms-core": ">=7.6.0,<9.0"
+  },
+  "suggest": {
+    "dmitryd/typo3-realurl": "~2.1"
+  },
+  "require-dev": {
+    "mikey179/vfsStream": "1.4.*@dev",
+    "phpunit/phpunit": "~4.8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pschriner\\Villakunterbunt\\": "Classes"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Pschriner\\Villakunterbunt\\Tests\\": "Tests",
+      "TYPO3\\CMS\\Core\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/core/Tests/",
+      "TYPO3\\CMS\\Fluid\\Tests\\": ".Build/vendor/typo3/cms/typo3/sysext/fluid/Tests/"
+    }
+  },
+  "replace": {
+    "villakunterbunt": "self.version",
+    "typo3-ter/villakunterbunt": "self.version"
+  },
+  "config": {
+    "vendor-dir": ".Build/vendor",
+    "bin-dir": ".Build/bin"
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "mkdir -p .Build/Web/typo3conf/ext/",
+      "[ -L .Build/Web/typo3conf/ext/villakunterbunt ] || ln -snvf ../../../../. .Build/Web/typo3conf/ext/villakunterbunt"
+    ]
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "4.2.x-dev"
+    },
+    "typo3/cms": {
+      "cms-package-dir": "{$vendor-dir}/typo3/cms",
+      "web-dir": ".Build/Web"
+    }
+  }
+}

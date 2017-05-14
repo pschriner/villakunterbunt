@@ -1,0 +1,92 @@
+RTE.default.classes{
+  left {
+	name = Links
+  }
+  right {
+	name = Rechts
+  }
+  center {
+	name = Zentriert
+  }
+  withoutBorder {
+	name = Ohne Rand	
+	value = border:0;
+  }
+}
+
+## Default RTE configuration
+RTE.default {
+	useCSS = 1
+	ignoreMainStyleOverride = 1
+    contentCSS = EXT:villakunterbunt/Resources/Public/Css/rte.css
+
+    ## Markup options (htmlArea RTE only)
+    enableWordClean = 1
+    removeTrailingBR = 1
+    removeComments = 1
+    removeTags = center, o:p, sdfield
+    removeTagsAndContents = style,script
+	#textindicator
+    hideButtons = findreplace,fontstyle,fontsize,subscript, superscript,blockstylelabel,blockstyle,fontstyle,fontsize,about
+	hidePStyleItems = PRE, H1, H4, H5, H6, DIV, ADDRESS
+	
+	showTagFreeClasses = 1
+}
+
+RTE.default.classesTable = left,center,right,withoutBorder
+RTE.default.proc.allowedClasses := addToList(left,center,right,withoutBorder)
+
+RTE.default.proc {
+	dontConvBRtoParagraph = 1
+	allowTagsOutside = img,hr
+	denyTags = font
+}
+
+RTE.default.proc { 
+	exitHTMLparser_db = 1 
+	exitHTMLparser_db { 
+		tags.b.remap = strong 
+		tags.i.remap = em 
+	} 
+}
+
+TCEFORM.tt_content.header_layout {
+    altLabels {
+        0 = Standard
+        1 = Hauptüberschrift
+        2 = Unterüberschrift
+        100 = Versteckt
+    }
+    removeItems = 3,4,5
+}
+###Ausblenden von unnötigen Feldern im Bildmodul - TYP
+TCEFORM.tt_content.sys_language_uid.disabled = 1
+# TCEFORM.tt_content.colPos.disabled
+TCEFORM.tt_content.spaceBefore.disabled = 1
+TCEFORM.tt_content.spaceAfter.disabled = 1
+TCEFORM.tt_content.section_frame.disabled = 1
+TCEFORM.tt_content.sectionIndex.disabled = 1
+TCEFORM.tt_content.linkToTop.disabled = 1
+TCEFORM.tt_content.imagecols.disabled = 1 
+TCEFORM.tt_content.header_position.disabled = 1
+TCEFORM.tt_content.layout.disabled = 1
+TCEFORM.tt_content.image_compression.disabled = 1
+TCEFORM.tt_content.image_effects.disabled = 1
+TCEFORM.tt_content.imageborder.disabled = 1
+
+mod.wizards.newContentElement.renderMode = tabs
+mod.wizards.newContentElement.wizardItems.common.show := removeFromList(bullets)
+mod.wizards.newContentElement.wizardItems.special.show := removeFromList(menu,html,div)
+mod.wizards.newContentElement.wizardItems.forms.show := removeFromList(login,search,mailform)
+mod.wizards.newContentElement.wizardItems.plugins.show := removeFromList(general,tx_piwikintegration_pi1)
+
+TCEMAIN {
+	permissions {
+		groupid = 1
+		group = show,edit,delete,new,editcontent
+	}
+	table.pages {
+		disablePrependAtCopy = 1
+		disableHideAtCopy = 0
+	}
+}

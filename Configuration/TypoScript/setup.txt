@@ -1,0 +1,193 @@
+config.doctype = html5
+config.xmlprologue = none
+
+config.removeDefaultJS = 1 
+config.noBlur = 1
+
+config.noScaleUp = 1
+config.meaningfulTempFilePrefix = 50
+
+config.absRefPrefix = /
+
+config.tx_realurl_enable = 1
+config.uniqueLinkVars = 1
+config.typolinkCheckRootline = 1
+config.typolinkEnableLinksAcrossDomains = 1
+
+config.language=de
+config.locale_all=de_DE
+
+
+################################ lib
+
+
+lib.menu = COA
+#lib.menu.5 = TEXT
+#lib.menu.5.value = <span class="typicons-home" aria-hidden="true"></span><span class="screen-reader">Startseite</span>
+#lib.menu.5.typolink.parameter = 10
+#lib.menu.5.outerWrap = <ul><li>|</li>
+lib.menu.10 = HMENU
+lib.menu.10 {
+	entryLevel=0
+	excludeUidList = 10,7,8
+	1 = TMENU
+	1 {
+	  wrap = <ul>|</ul>
+	  expAll = 0
+	  noBlur = 1
+	  NO.allWrap = <li>|</li>
+	  RO < .NO
+	  RO = 1
+	  CUR < .NO
+	  CUR = 1
+	  CUR.allWrap = <li class="active">|</li>
+	  ACTIFSUB < .NO
+	  ACTIFSUB = 1
+	  ACTIFSUB.allWrap = <li class="sub">|</li>
+	  CURIFSUB < .NO
+	  CURIFSUB = 1
+	  CURIFSUB.allWrap = <li class="active sub">|</li>
+	}
+}
+lib.menu.20 = HMENU
+lib.menu.20 {
+	entryLevel=1
+	1 = TMENU
+	1 {
+	  wrap = <ul id="mainMenu2">|</ul>
+	  expAll = 0
+	  noBlur = 1
+	  NO.allWrap = <li>|</li>
+	  RO < .NO
+	  RO = 1
+	  CUR < .NO
+	  CUR = 1
+	  CUR.allWrap = <li class="active">|</li>
+	  ACT < .CUR
+	}
+}
+
+#lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.removeWrapping = 1
+#lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.addAttributes.P.class =
+
+#Standardheader
+lib.stdheader.10.1.fontTag = <h3>|</h3>
+
+#csc-header entfernen
+lib.stdheader.stdWrap.dataWrap >
+
+#Überschriften ohne Zusätze
+lib.stdheader.2.headerStyle >
+lib.stdheader.3.headerClass >
+
+lib.mainContent < styles.content.get
+lib.mainContent.select.where = colPos = 1
+
+lib.sideContent < styles.content.get
+lib.sideContent.select.where = colPos = 2
+
+lib.fluidContent.settings.media.popup {
+	directImageLink = 1
+	JSwindow = 0
+	linkParams.ATagParams.dataWrap = class="lightbox" data-fancybox-group="lb{field:uid}"
+	width = 1024m
+	height = 1024m
+} 
+
+# class="bodytext" bei RTE abstellen
+lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.addAttributes.P.class >
+
+# Ummantelung mit <p> bei folgenden Tags verhindern
+lib.parseFunc_RTE.nonTypoTagStdWrap.encapsLines.encapsTagList = cite, div, p, pre, hr, h1, h2, h3, h4, h5, h6,table,tr,td
+
+#p bei Tabellenzellen entfernen
+#lib.parseFunc_RTE.externalBlocks.table.stdWrap.HTMLparser.removeTags = p
+
+#Klassen in Tabellen zulassen
+lib.parseFunc_RTE.externalBlocks.table.stdWrap.HTMLparser.tags.table.fixAttrib.class.list >
+
+lib.parseFunc_RTE.tags{
+  b=TEXT
+  b{
+    current=1
+    wrap= <strong>|</strong>
+  }
+  i=TEXT
+  i{
+    current=1
+    wrap= <em>|</em>
+  }
+}
+
+lib.footer = COA 
+lib.footer.10 = HMENU
+lib.footer.10 {
+  special = list
+  special.value = 7,8
+  1 < lib.menu.10.1
+  1.wrap = <ul id="footerMenu">|</ul>
+  includeNotInMenu = 1
+}
+lib.footer.20 = TEXT
+lib.footer.20 {
+	data = date : U
+	strftime = %Y
+	noTrimWrap = |<span>&copy; | Villa Kunterbunt e.V.</span>|
+}
+
+########################### PAGE
+
+page = PAGE
+page.typeNum = 0
+
+page.meta { 
+ keywords { 
+   field = keywords
+ } 
+ author { 
+   field = author
+ } 
+ description { 
+   field = description
+ } 
+  viewport = width=device-width
+}
+
+# Create a Fluid Template
+page.10 = FLUIDTEMPLATE
+page.10 {
+  # Set the Template Pathes
+  partialRootPaths.10 = EXT:villakunterbunt/Resources/Private/Partials
+  layoutRootPaths.10 = EXT:villakunterbunt/Resources/Private/Layouts
+  variables {
+    piwik < lib.piwik
+    
+    menu < lib.menu
+    # Assign the main column with our {content}-destination
+    content < styles.content.get
+    
+    # Assign the right column with our {content_right}-destination
+    content_right < styles.content.get
+    content_right.select.where = colPos = 2
+    
+    footer < lib.footer
+  }
+  file = EXT:villakunterbunt/Resources/Private/Templates/Main.html
+}
+
+page.includeJSFooter {
+  vk = EXT:villakunterbunt/Resources/Public/Javascript/vk.js
+}
+page.includeCSS {
+  1 = http://fonts.googleapis.com/css?family=Shadows+Into+Light
+  1.external = 1
+  10 = EXT:villakunterbunt/Resources/Public/Css/styles.css
+}
+page.shortcutIcon = favicon.ico
+
+#########
+page {
+    includeJSFooterlibs {
+        jquery = EXT:villakunterbunt/Resources/Public/Javascript/jquery-1.12.2.min.js
+    }
+}

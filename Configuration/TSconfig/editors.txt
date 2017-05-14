@@ -1,0 +1,30 @@
+setup.override.startModule = web_layout
+
+# Users need to be able to clear the cache in most cases
+options.clearCache.pages = 1
+options.clearCache.all = 1
+ 
+# I've never seen a client use bookmarks. We remove them to reduce clutter.
+options.enableBookmarks = 0
+ 
+# Let your users create folders in the extension browser.
+options.createFoldersInEB = 1
+ 
+# Who doesn't want a save+new button when working in TYPO3? NOBODY, that's who!
+options.saveDocNew = 1
+ 
+# The view button is the bane of our existence. It assumes that records necessarily
+# display on the page that contains them, which is _often_ not the case.
+options.saveDocView = 0
+
+# With SEO en vogue, editors have long titles. They should see nav titles in the tree.
+# options.pageTree.showNavTitle = 1
+ 
+# No-brainer. Thumbnails make life easier.
+options.file_list.enableDisplayThumbnails = 1
+ 
+# Enable upload-image-field in the element browser
+options.uploadFieldsInTopOfEB = 1
+ 
+# Enable create-folder-field in rte
+options.createFoldersInEB =1
