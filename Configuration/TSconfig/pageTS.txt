@@ -1,4 +1,4 @@
-RTE.default.classes{
+oRTE.default.classes{
   left {
 	name = Links
   }
@@ -15,10 +15,10 @@ RTE.default.classes{
 }
 
 ## Default RTE configuration
-RTE.default {
+oRTE.default {
 	useCSS = 1
 	ignoreMainStyleOverride = 1
-    contentCSS = EXT:villakunterbunt/Resources/Public/Css/rte.css
+    contentCSS = EXT:villakunterbunt/Resources/Public/Css/oRTE.css
 
     ## Markup options (htmlArea RTE only)
     enableWordClean = 1
@@ -33,16 +33,16 @@ RTE.default {
 	showTagFreeClasses = 1
 }
 
-RTE.default.classesTable = left,center,right,withoutBorder
-RTE.default.proc.allowedClasses := addToList(left,center,right,withoutBorder)
+oRTE.default.classesTable = left,center,right,withoutBorder
+oRTE.default.proc.allowedClasses := addToList(left,center,right,withoutBorder)
 
-RTE.default.proc {
+oRTE.default.proc {
 	dontConvBRtoParagraph = 1
 	allowTagsOutside = img,hr
 	denyTags = font
 }
 
-RTE.default.proc { 
+oRTE.default.proc { 
 	exitHTMLparser_db = 1 
 	exitHTMLparser_db { 
 		tags.b.remap = strong 
@@ -75,7 +75,7 @@ TCEFORM.tt_content.image_effects.disabled = 1
 TCEFORM.tt_content.imageborder.disabled = 1
 
 mod.wizards.newContentElement.renderMode = tabs
-mod.wizards.newContentElement.wizardItems.common.show := removeFromList(bullets)
+mod.wizards.newContentElement.wizardItems.common.show := removeFromList(bullets,text,textpic)
 mod.wizards.newContentElement.wizardItems.special.show := removeFromList(menu,html,div)
 mod.wizards.newContentElement.wizardItems.forms.show := removeFromList(login,search,mailform)
 mod.wizards.newContentElement.wizardItems.plugins.show := removeFromList(general,tx_piwikintegration_pi1)
