@@ -49,7 +49,7 @@ oRTE.default.proc {
 		tags.i.remap = em 
 	} 
 }
-
+TCEFORM.tt_content.CType.keepItems = textmedia,list,menu_sitemap,dce_dceuid1,text,image,login,menu_subpages,uploads
 TCEFORM.tt_content.header_layout {
     altLabels {
         0 = Standard
@@ -73,11 +73,16 @@ TCEFORM.tt_content.layout.disabled = 1
 TCEFORM.tt_content.image_compression.disabled = 1
 TCEFORM.tt_content.image_effects.disabled = 1
 TCEFORM.tt_content.imageborder.disabled = 1
+TCEFORM.tt_content.frame_class.disabled = 1
+TCEFORM.tt_content.space_before_class.disabled = 1
+TCEFORM.tt_content.space_after_class.disabled = 1
+TCEFORM.tt_content.date.disabled = 1
 
 mod.wizards.newContentElement.renderMode = tabs
-mod.wizards.newContentElement.wizardItems.common.show := removeFromList(bullets,text,textpic)
-mod.wizards.newContentElement.wizardItems.special.show := removeFromList(menu,html,div)
-mod.wizards.newContentElement.wizardItems.forms.show := removeFromList(login,search,mailform)
+mod.wizards.newContentElement.wizardItems.common.show := removeFromList(bullets,text,textpic,table)
+mod.wizards.newContentElement.wizardItems.special.show =
+mod.wizards.newContentElement.wizardItems.menu.show =
+mod.wizards.newContentElement.wizardItems.forms.show := removeFromList(search,mailform)
 mod.wizards.newContentElement.wizardItems.plugins.show := removeFromList(general,tx_piwikintegration_pi1)
 
 TCEMAIN {
@@ -88,5 +93,5 @@ TCEMAIN {
 	table.pages {
 		disablePrependAtCopy = 1
 		disableHideAtCopy = 0
-	}
+	}	
 }

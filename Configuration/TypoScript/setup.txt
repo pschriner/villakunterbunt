@@ -76,7 +76,7 @@ lib.stdheader.10.1.fontTag = <h3>|</h3>
 #csc-header entfernen
 lib.stdheader.stdWrap.dataWrap >
 
-#Überschriften ohne Zusätze
+#�berschriften ohne Zus�tze
 lib.stdheader.2.headerStyle >
 lib.stdheader.3.headerClass >
 
@@ -170,6 +170,7 @@ page.10 {
     # Assign the right column with our {content_right}-destination
     content_right < styles.content.get
     content_right.select.where = colPos = 2
+		content_right.slide = -1
     
     footer < lib.footer
   }
