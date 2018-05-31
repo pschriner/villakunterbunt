@@ -1,8 +1,10 @@
 <f:layout name="main" />
 <f:section name="content">
+  <f:if condition="{content_right}">
   <div id="content_right">
 	<f:format.raw>{content_right}</f:format.raw>
   </div>
+  </f:if>
   <div id="content_main">
     <f:format.raw>{content}</f:format.raw>
   </div>

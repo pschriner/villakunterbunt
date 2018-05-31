@@ -1,4 +1,4 @@
-$('header h1 span').each(function(){
+$('header#topHeader span').each(function(){
 	if($(this).html().toUpperCase() == 'villa'.toUpperCase()) {
 		$(this).html("<span class='blau1'>V</span><span class='gelb1'>I</span><span class='rot1'>L</span><span class='gruen1'>L</span><span class='blau2'>A</span>");
 	}
@@ -28,9 +28,9 @@ $(document).ready(function(){
 		
 		$(".lightbox").fancybox({
         tpl: {
-          error    : '<p class="fancybox-error">Der Inhalt konnte nicht geladen werden.<br/>Bitte probieren Sie es später noch einmal.</p>',
+          error    : '<p class="fancybox-error">Der Inhalt konnte nicht geladen werden.<br/>Bitte probieren Sie es spï¿½ter noch einmal.</p>',
           closeBtn : '<a title="Schliessen" class="fancybox-item fancybox-close" href="javascript:;"></a>',
-          next     : '<a title="Nächstes" class="fancybox-nav fancybox-next" href="javascript:;"><span></span></a>',
+          next     : '<a title="Nï¿½chstes" class="fancybox-nav fancybox-next" href="javascript:;"><span></span></a>',
           prev     : '<a title="Vorheriges" class="fancybox-nav fancybox-prev" href="javascript:;"><span></span></a>'
         },
         nextEffect : 'fade',

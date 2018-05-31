@@ -18,6 +18,8 @@ config.enableContentLengthHeader = 0
 config.language=de
 config.locale_all=de_DE
 
+config.pageTitle.stdWrap.noTrimWrap = || - Familienzentrum Villa Kunterbunt Niederkassel|
+
 ################################ lib
 
 
@@ -123,8 +125,8 @@ lib.parseFunc_RTE.tags{
 lib.footer = COA 
 lib.footer.10 = HMENU
 lib.footer.10 {
-  special = list
-  special.value = 7,8
+  special = directory
+  special.value = 63
   1 < lib.menu.10.1
   1.wrap = <ul id="footerMenu">|</ul>
   includeNotInMenu = 1
@@ -135,6 +137,7 @@ lib.footer.20 {
 	strftime = %Y
 	noTrimWrap = |<span>&copy; | Villa Kunterbunt e.V.</span>|
 }
+lib.footer.cache.lifetime = 600
 
 ########################### PAGE
 
@@ -152,6 +155,10 @@ page.meta {
    field = description
  } 
   viewport = width=device-width
+	geo\.region = DE-NW
+	geo\.placename = Niederkassel
+	geo\.position = 50.7930399;7.055191
+	ICBM = 50.7930399, 7.055191
 }
 
 # Create a Fluid Template
@@ -161,7 +168,9 @@ page.10 {
   partialRootPaths.10 = EXT:villakunterbunt/Resources/Private/Partials
   layoutRootPaths.10 = EXT:villakunterbunt/Resources/Private/Layouts
   variables {
-    piwik < lib.piwik
+
+		pageTitle = TEXT
+		pageTitle.field = title
     
     menu < lib.menu
     # Assign the main column with our {content}-destination
@@ -181,8 +190,8 @@ page.includeJSFooter {
   vk = EXT:villakunterbunt/Resources/Public/Javascript/vk.js
 }
 page.includeCSS {
-  1 = http://fonts.googleapis.com/css?family=Shadows+Into+Light
-  1.external = 1
+	1 = /fonts/shadows-into-light.css
+	1.external = 1
   10 = EXT:villakunterbunt/Resources/Public/Css/styles.css
 }
 page.shortcutIcon = favicon.ico

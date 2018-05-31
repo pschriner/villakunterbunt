@@ -1,20 +1,12 @@
-<header>
-	<h1><div>Familienzentrum</div> <span class="villa">Villa</span> <span class="kunterbunt">Kunterbunt</span></h1>
-	<menu><f:format.html>{menu}</f:format.html></menu>
+<header id="topHeader">
+	<div>Familienzentrum</div><span class="villa">Villa</span> <span class="kunterbunt">Kunterbunt</span>
+	<h1 class="hidden">{pageTitle}</h1>	
 </header>
+<nav>
+	<f:format.html>{menu}</f:format.html>
+</nav>
 <div id="content"><f:render section="content" />
 <div class="clear"></div>
 </div>
 
-<footer><f:format.html parseFuncTSPath="">{footer}</f:format.html>
-<div>Diese Seite benutzt <a href="http://piwik.org" target="_blank">piwik</a> für das Tracking der Besucher.<br/>
-Wenn Sie dem Tracking wiedersprechen wollen, klicken Sie bitte <a href="typo3conf/piwik/piwik/index.php?module=CoreAdminHome&action=optOut" onclick="return toggleTrackingIframe();">hier</a></div>
-<iframe src="/typo3conf/piwik/piwik/index.php?module=CoreAdminHome&action=optOut&language=de" width="600" style="border:0px solid white; background-color:white;"></iframe>
-</footer>
-<script type="text/Javascript">
-	document.body.getElementsByTagName('footer')[0].getElementsByTagName('iframe')[0].style.display="none";
-	function toggleTrackingIframe() {
-		document.body.getElementsByTagName('footer')[0].getElementsByTagName('iframe')[0].style.display = "inline-block";
-		return false;
-	}
-</script>
+<footer><f:format.html parseFuncTSPath="">{footer}</f:format.html></footer>
